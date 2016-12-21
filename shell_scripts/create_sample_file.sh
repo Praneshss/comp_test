@@ -1,3 +1,4 @@
+
 if [[ -z "$1" ]] || [[ -z "$2" ]]; then
     echo "Please input filename and size"
     echo "$0  <filename> <size in bytes>"
@@ -12,6 +13,6 @@ else
 filename=$1
 size=$2
 size_cal=$(echo "$size * 3/4  " | bc -l);
-
+	
 openssl rand -out $filename -base64 $size_cal
 fi
