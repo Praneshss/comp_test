@@ -112,7 +112,7 @@ ifeq ($(WITH_UPSTREAM),1)
         ADDITIONAL_OBJECTS += -ludev
 endif
 
-USER_SOURCE_FILES = ../../common/cpa_sample_utils.c cpa_dc_stateful_sample.c
+USER_SOURCE_FILES = cpa_sample_utils.c cpa_dc_stateful_sample.c
 USER_SOURCE_FILES += cpa_dc_sample_user.c
 ifeq ($(RESET_SESSION_API),1)
         EXTRA_CFLAGS+=-DRESET_SESSION_API
@@ -122,7 +122,7 @@ endif
 USER_INCLUDES= $(INCLUDES)
 USER_INCLUDES+= -I$(CMN_ROOT)/
 
-USER_SOURCE_FILES += ../../../performance/qae/linux/user_space/qae_mem_utils.c
+USER_SOURCE_FILES += qae_mem_utils.c
 
 default: clean
 	$(CC) -g  -Wall -O1 $(USER_INCLUDES)  -DUSER_SPACE $(EXTRA_CFLAGS) \
