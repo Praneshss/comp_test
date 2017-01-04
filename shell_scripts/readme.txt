@@ -21,3 +21,13 @@ use the script get_comp_details.sh
 usage: 
 pranesh@localhost#./get_comp_details.sh <original_filename> <compressed_filename>
 ########################################################################
+To test the time taken , comp_calc_time.sh script file is used. The error rate is approx 5ms.
+Example command to run the comp_calc_time.sh script file.
+./comp_calc_time.sh <val> <uncompressed filename> <expected comprressed filename>
+<val> corresponds to each types of compression utilities.
+0 for QAT
+1 for gzip
+2 for openssllib
+3 for zopfli
+eg:
+./comp_calc_time.sh 0 singlech5M.txt singlech5M.txt.gz
